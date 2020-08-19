@@ -29,4 +29,12 @@ class Product(models.Model):
         return self.title
 
 
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(blank=True, null=True, upload_to='products')
+    order = models.IntegerField()
 
+
+
+
+#TODO: add model for images
